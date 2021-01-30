@@ -5,20 +5,37 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/urfave/negroni"
 )
 
-type Data []struct {
-	BRL string `json:""`
+type Data struct {
+	Rates *Rates `json:"rates"`
+}
+
+type Rates struct {
+	BRL string `json:"brl"`
+	USD string `json:"usd"`
+	EUR string `json:"eur"`
 }
 
 func main() {
 	mux := http.NewServeMux()
 
+	param := ""
+
+	param = os.Args[1]
+
+	if len(os.Args) > 1 {
+		param = os.Args[1]
+	} else {
+		param = "BRL"
+	}
+
 	mux.HandleFunc("/", func(w http.ResponseWriter, req *http.Request) {
 
-		res, err := http.Get("https://api.exchangeratesapi.io/latest?base=BRL&symbols=BRL,USD")
+		res, err := http.Get("https://api.exchangeratesapi.io/latest?base=" + param + "&symbols=BRL,USD,EUR")
 
 		if err != nil {
 			log.Fatal(err)
@@ -30,7 +47,7 @@ func main() {
 			log.Fatal(readErr)
 		}
 
-		fmt.Println(string(body))
+		fmt.Fprintf(w, string(body))
 	})
 
 	n := negroni.Classic() // Includes some default middlewares
