@@ -23,7 +23,7 @@ Start the Runner docker container: `docker-compose run --rm --name py-runner run
 
 Have in mind that they must be ran in that exact order, as the Runner is directly dependant on the API being up. Also it's important to note that every time you reset the API to change the parameter, you will need to run the Runner again aswell to update the message.
 
-On that note, you might have noticed that in the API command it says `USD` in the end, that's the parameter which will change the output in the Runner. The exchangerates API utilizes ISO 4217 codes to identify their currency, so you can feel free to switch the parameter to any of the following:
+On that note, you might have noticed that in the API command it says `USD` in the end, that's the parameter which will change the output in the Runner. The exchangerates API utilizes ISO 4217 codes to identify their currency, so you can feel free to switch the parameter to any of the following codes:
 
 | Code     | Respective Currency   |
 | -------- |  :----------------:   | 
