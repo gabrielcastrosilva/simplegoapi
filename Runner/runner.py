@@ -25,9 +25,9 @@ coin = rawData[0][2]
 symbol = rawData[0][3][0]
 
 # Prints showcasing parsed data from API
-print("Moeda escolhida: " + coin)
-print(symbol + " 1,00 se equivale a:")
+print("Choosen currency: " + coin)
+print(symbol + " 1,00 equals to:")
 print("€ " + str(rates['rates']['EUR']) + " Euros")
-print("$ " + str(rates['rates']['USD']) + " Dolares Americanos")
-print("R$ " + str(rates['rates']['BRL']) + " Reais brasileiros")
+print("$ " + str(rates['rates']['USD']) + " United States Dollars")
+print("R$ " + str(rates['rates']['BRL']) + " Brazilian Reais")
 
