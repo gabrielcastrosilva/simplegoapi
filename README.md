@@ -1,3 +1,5 @@
+![](https://img.shields.io/badge/Status-Working-brightgreen) 
+![](https://img.shields.io/badge/Release-1.0-blue)
 # Simple Go API
 
 A simple API that returns the current quotation of the Brazilian Real, United States Dollar and Euro in any choosen coin, developed in Go that communicates with an [external api](exchangeratesapi.io) and is parsed by a Python script inside Docker.
