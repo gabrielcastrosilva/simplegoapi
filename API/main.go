@@ -41,6 +41,11 @@ func main() {
 			log.Fatal(readErr)
 		}
 
+		// Request information
+		fmt.Println("Received parameter: " + param)
+		fmt.Println("JSON sent to the URL:\n" + string(body) + "\n")
+
+		// JSON being sent
 		fmt.Fprintf(w, string(body))
 	})
 
