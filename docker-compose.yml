@@ -1,0 +1,23 @@
+version: "3.7"
+services:
+  api:
+    build: "./API"
+    container_name: go-api
+    restart: always
+    ports:
+      - "3000:3000"
+    networks:
+      - webproxy
+
+  runner:
+    build: "./Runner"
+    container_name: py-runner
+    restart: always
+    ports:
+      - "8000:8000"
+    networks:
+      - webproxy
+
+networks:
+  webproxy:
+    driver: bridge
