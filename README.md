@@ -15,13 +15,13 @@ Inside Runner folder:
 
 It is of utmost importance for these commands to be ran in their respective folders, otherwise they will **not work**.
 
-Then, in the directory where `docker-compose.yml` file is located, the following commands need to be ran:
+Then, the following commands need to be ran in order to:
 
-To start the API docker container: `docker-compose run --rm --name go-api -p 3000:3000 api USD`
+Start the API docker container: `docker-compose run --rm --name go-api -p 3000:3000 api USD`
 
-To start the Runner docker container: `docker-compose run --rm --name py-runner runner`
+Start the Runner docker container: `docker-compose run --rm --name py-runner runner`
 
-They must be ran in that order, as the Runner is directly dependant on the API being up. Also it's important to note that every time you reset the API to change the parameter, you will need to run the Runner again aswell to update the message.
+Have in mind that they must be ran in that exact order, as the Runner is directly dependant on the API being up. Also it's important to note that every time you reset the API to change the parameter, you will need to run the Runner again aswell to update the message.
 
 On that note, you might have noticed that in the API command it says `USD` in the end, that's the parameter which will change the output in the Runner. The exchangerates API utilizes ISO 4217 codes to identify their currency, so you can feel free to switch the parameter to any of the following:
 
