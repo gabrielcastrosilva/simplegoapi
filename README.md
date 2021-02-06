@@ -17,6 +17,8 @@ Inside Runner folder:
 
 It is of utmost importance for these commands to be ran in their respective folders, otherwise they will **not work**.
 
+In case of errors you can run the following command to prune **ALL** of your docker images: `docker system prune -a`
+
 Then, the following commands need to be ran in order to:
 
 Start the API docker container: `docker-compose run --rm --name go-api -p 3000:3000 api USD`
